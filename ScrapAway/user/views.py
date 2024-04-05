@@ -1,9 +1,9 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import BuyerSignUpForm, SellerSignUpForm, BuyerLoginForm, SellerLoginForm
+from .forms import BuyerSignUpForm, SellerSignUpForm, BuyerLoginForm, SellerLoginForm, SellItem
 from .models import PickupRequest
-
+from django.shortcuts import get_object_or_404
 
 def landing(request):
     # Your view logic here
@@ -82,11 +82,56 @@ def seller_login(request):
 
 def buyer_dashboard(request):
     print("Buyer dashboard accessed")
-    pickup_request = PickupRequest.objects.all()
+    pickup_requests = PickupRequest.objects.all()
     context = {
-        'requests': pickup_request
+        'requests': pickup_requests
     }
     return render(request, 'buyer_dashboard.html', context )
+
+def seller_dashboard(request):
+    print("Seller dashboard accessed")
+    if request.method == 'POST':
+        form = SellItem(request.POST)
+        if form.is_valid():
+            pickup_request = form.save(commit=False)
+            pickup_request.seller = request.user
+            pickup_request.save()
+            # You may add additional logic here, e.g., redirect to login page with a success message
+            return redirect('seller_dashboard')
+        else:
+            print("form invalid")
+
+    else:
+        form = SellItem()
+    
+    pickup_requests = request.user.sale_request.all()
+
+    context = {
+        'pickup_requests': pickup_requests,
+        'form': form
+    }
+
+    return render(request, 'seller_dashboard.html', context)
+
+
+def request_details(request, id):
+    pickup_request = get_object_or_404(PickupRequest, id=id)
+    context = {
+        'pickup_request': pickup_request
+    }
+    return render(request, 'pickup_details.html', context )
+
+def accept_request(request, id):
+    pickup_request = get_object_or_404(PickupRequest, id=id)
+    pickup_request.buyer = request.user
+    pickup_request.status = "CONFIRMED"
+    pickup_request.save()
+    return redirect('buyer_dashboard')
+
+    
+
+
+    
 
 
 

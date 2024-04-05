@@ -28,10 +28,13 @@ STATUS_CHOICES = [
     ]
 
 class PickupRequest(models.Model):
-    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name="sale_request")
     item = models.CharField(max_length=255)
     item_desc = models.TextField()
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, default='PENDING')
+    buyer = models.ForeignKey(User, on_delete=models.SET_NULL, null= True, related_name="accepted_request")
+
+
 
 
 
