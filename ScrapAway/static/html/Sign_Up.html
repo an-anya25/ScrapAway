@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="D:\girlathon\static\css\styles.css">
+</head>
+<body>
+    <div class="container"> <!-- Added container div -->
+        
+        <div class="image-container">
+            <img src="D:\girlathon\ScrapAway\frontend\images\Green-bulb.png" alt="Your Image">
+        </div>
+        <div class="signup-form">
+            <h2>Create Account</h2>
+            <form action="/submit_form.php" method="post">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <button type="submit">Create Account</button>
+                <p>Already have an account? <a href="#">Sign Up</a></p>
+                <div class="social-buttons">
+                    <button class="social-button">
+                        <img src="D:\girlathon\static\images\google.png" alt="Google Icon" class="social-icon">
+                        Sign up with Google
+                    </button>
+                    <button class="social-button facebook">
+                        <img src="D:\girlathon\static\images\Facebook-PNG-Image.png" alt="Facebook Icon" class="social-icon">
+                        Sign up with Facebook
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

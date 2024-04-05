@@ -1,0 +1,195 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #f2f2f2;*/
+}
+.container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Add position relative */
+}
+
+/* Add this new CSS rule for the green vertical column */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0; /* Stretch from top to bottom */
+    left: 0;
+    width: 20%; /* Adjust the width as needed */
+    background-color: rgb(2, 49, 2); /* Green color for the column */
+    z-index: -1; /* Ensure the column is behind other content */
+}
+.signup-form {
+    /*background-color: #ffffff;*/
+    border-radius: 10px;
+    padding: 20px;
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+    width: 100%;
+    max-width: 400px;
+    margin: top 10px;
+}
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.signup-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.signup-form button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.signup-form p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+.signup-form a {
+    color: green;
+    text-decoration: none;
+}
+.social-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.social-button {
+    background-color: #DB4437;
+    /*color: white;*/
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+}
+.social-button.facebook {
+    background-color: #3B5998;
+}
+.image-container {
+    width: 40%; /* Image container occupies the other half */
+    display: flex; /* Use flexbox to center image vertically */
+    justify-content: right; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Ensure half of the image is visible */
+    margin-top: 50px;
+    /*margin-right: 50px;*/
+}
+.image-container img {
+    width: 50%; /* Double the width of the image to ensure half is visible */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: -52%; /* Move the image to the left to show half in the green column */
+    margin-right: 132px;
+}
+.social-buttons {
+    display: flex; /* Use flexbox to align buttons side by side */
+    justify-content: space-between; /* Add space between buttons */
+}
+.social-button {
+    display: inline-block; /* Set buttons as inline-block elements */
+    text-align: center; /* Center button content */
+    vertical-align: top; /* Align buttons vertically */
+    width: 48%; /* Adjust button width as needed */
+    padding: 10px; /* Add padding to buttons */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add button border radius */
+    background-color: #00f57a; /* Set button background color */
+    color: white; /* Set button text color */
+    margin-right: 5px; /* Add margin between buttons */
+}
+.social-button img {
+    width: 15px; /* Adjust icon width */
+    height: auto; /* Maintain aspect ratio */
+    /*margin-right: 0px; /* Add space between icon and text */
+}
+.green-panel {
+    background-color: #024902; /* Dark green color for the panel */
+    color: #fff; /* Text color */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: center; /* Center align the links */
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center the content vertically */
+}
+.green-panel_row {
+    background-color: #024902; /* Dark green color for the panel */
+    height: 100px; /* Adjust the height as needed */
+    width: 100%; /* Cover the entire width of the viewport */
+    position: fixed; /* Fix the position of the panel */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Position at the left of the viewport */
+    z-index: -1; /* Ensure the panel is behind other content */
+}
+
+.links a {
+    color: #fff; /* Text color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Add space between links */
+}
+.links a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+.about-container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100%;
+    position: relative; /* Add position relative */
+}
+.about-content {
+    padding: 20px;
+    width: 60%; /* Adjust the width as needed */
+}
+.about-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.about-content ul {
+    padding-left: 20px;
+}
+.about-content ul li {
+    margin-bottom: 10px;
+}
+.about-image {
+    width: 40%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+}
+.about-image img {
+    width: 100%;
+    height: auto;
+    margin-left: -50%;
+}
