@@ -18,6 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from user import views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
+
 
 
 urlpatterns = [
@@ -28,5 +32,7 @@ urlpatterns = [
     path('buyer/signup/', views.buyer_signup, name='buyer_signup'),  
     path('seller/signup/', views.seller_signup, name='seller_signup'),  
     path('buyer/dashboard/', views.buyer_dashboard, name='buyer_dashboard'),
-]
+]\
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
