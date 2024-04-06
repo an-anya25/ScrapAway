@@ -9,6 +9,9 @@ body {
     padding: 0;
     height: 100vh; /* Make the body take full viewport height */
     position: relative; /* Required for absolute positioning */
+    background-image: url('../static/images/BLAH.webp'); /* Relative path to your image */
+    background-size: cover; /* Cover the entire body with the background image */
+    background-position: center; /* Center the background image */
 }
 
 .bottom-image {
@@ -21,7 +24,7 @@ body {
 }
 
 .homepage {
-    margin-top: 100px; /* Adjust spacing as needed */
+    margin-top: 50px; /* Adjust spacing as needed */
     text-align: center;
 }
 h1{
@@ -33,7 +36,7 @@ h1{
 h3{
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
-    font-size: 20px;
+    font-size: 30px;
 }
  
  .navbar{
@@ -66,11 +69,11 @@ h3{
 </head>
 <body>
     
-<p style="background-image: url('../static/images/BLAH.webp'); background-size: cover; background-position: center;">
+
 <header class="header">
     <nav class="navbar">
 		<div class="navdiv">
-			<div class="logo"><a>ALOHA</a> </div>
+			<div class="logo"><a>ScapAway</a> </div>
 			<ul>
 				<li><a href="">Home</a></li>
 				<li><a href="{% url 'about' %}">About</a></li>
@@ -81,7 +84,7 @@ h3{
    <div class= "homepage">
         <div class="home">
             <h1>
-                ALOHA
+                ScrapAway
             </h1>
             <h3>
                 Aloha! A Complete Solution to Sustainable Living – Empowering Communities, One Green Step at a time
@@ -90,6 +93,5 @@ h3{
         </div>  
     </div>
 </header>
-</p>
 </body>
 </html>
