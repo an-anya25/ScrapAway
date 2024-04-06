@@ -1,16 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Sign Up</title>
-</head>
-<body>
-    <h1>Seller Sign Up</h1>
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block title %}
+Seller SignUp
+{% endblock title %}
+{% block form %}
+<div class="signup-form">
+    <h2>Sign Up</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Sign Up</button>
+        <button type="submit" class="links a">SignUp</button>
+        <p>Already have an account? <a href="{% url 'seller_login' %}">Login</a></p>
+        <div class="social-buttons">
+            <button class="social-button">
+                <img src="{% static 'images/google.png'%}" alt="Google Icon" class="social-icon">
+                Sign Up with Google
+            </button>
+            <button class="social-button facebook">
+                <img src="{% static 'images/Facebook-PNG-Image.png'%}" alt="Facebook Icon" class="social-icon">
+                Sign Up with Facebook
+            </button>
+        </div>
     </form>
-</body>
-</html>
+</div>
+{% endblock form %}

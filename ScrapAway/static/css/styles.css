@@ -15,8 +15,6 @@ body {
     height: 100%;
     position: relative; /* Add position relative */
 }
-
-/* Add this new CSS rule for the green vertical column */
 .container::before {
     content: "";
     position: absolute;
@@ -56,7 +54,6 @@ body {
 }
 .signup-form button {
     background-color: green;
-    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -78,8 +75,8 @@ body {
     margin-top: 15px;
 }
 .social-button {
-    background-color: #DB4437;
-    /*color: white;*/
+    background-color: #0ba805;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -89,6 +86,9 @@ body {
 .social-button.facebook {
     background-color: #3B5998;
 }
+.full-height {
+    height: 100vh; /* Set the height of the body to 100vh */
+}
 .image-container {
     width: 40%; /* Image container occupies the other half */
     display: flex; /* Use flexbox to center image vertically */
@@ -96,13 +96,13 @@ body {
     align-items: center; /* Center vertically */
     overflow: hidden; /* Ensure half of the image is visible */
     margin-top: 50px;
-    /*margin-right: 50px;*/
+    margin-right: 50px;
 }
 .image-container img {
     width: 50%; /* Double the width of the image to ensure half is visible */
     height: auto; /* Maintain aspect ratio */
-    margin-left: -52%; /* Move the image to the left to show half in the green column */
-    margin-right: 132px;
+    /* margin-left: -52%; /* Move the image to the left to show half in the green column */
+    margin-right: 73px;
 }
 .social-buttons {
     display: flex; /* Use flexbox to align buttons side by side */
@@ -116,7 +116,7 @@ body {
     padding: 10px; /* Add padding to buttons */
     border: none; /* Remove button border */
     border-radius: 5px; /* Add button border radius */
-    background-color: #00f57a; /* Set button background color */
+    background-color: #05812a; /* Set button background color */
     color: white; /* Set button text color */
     margin-right: 5px; /* Add margin between buttons */
 }
@@ -144,7 +144,6 @@ body {
     left: 0; /* Position at the left of the viewport */
     z-index: -1; /* Ensure the panel is behind other content */
 }
-
 .links a {
     color: #fff; /* Text color for links */
     text-decoration: none; /* Remove underline from links */
@@ -192,4 +191,49 @@ body {
     width: 100%;
     height: auto;
     margin-left: -50%;
+}
+.container index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-buttons index {
+    display: flex;
+}
+
+.button-container index {
+    position: relative; /* Position relative for absolute positioning */
+    margin: 0 10px; /* Adjust spacing between buttons */
+}
+
+.image-container index {
+    position: absolute; /* Position absolute */
+    top: -40px; /* Adjust the position as needed */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Center the image horizontally */
+}
+
+.social-button index {
+    padding: 10px 20px;
+    background-color: #DB4437;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.image-container-index{
+    display: flex;
+    justify-content: center; /* Center align images horizontally */
+    margin-top: 20px; /* Add margin to separate images from buttons */
+}
+
+.image-container img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+.button-container {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    align-items: center; /* Center align items horizontally */
 }

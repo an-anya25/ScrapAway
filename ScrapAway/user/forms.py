@@ -9,6 +9,11 @@ class BuyerSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields = ('username', 'password1', 'password2', 'address', 'phone_number')
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.fields['password1'].help_text = None
+        self.fields['password2'].help_text = None
+        self.fields['username'].help_text = None
         
 
 class SellerSignUpForm(UserCreationForm):
@@ -18,6 +23,11 @@ class SellerSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields = ('username', 'password1', 'password2', 'address', 'phone_number')
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.fields['password1'].help_text = None
+        self.fields['password2'].help_text = None
+        self.fields['username'].help_text = None
 
 class BuyerLoginForm(forms.Form):
     username = forms.CharField()

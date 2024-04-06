@@ -1,4 +1,47 @@
-<!DOCTYPE html>
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block title %}
+Seller LogIn
+{% endblock title %}
+{% block form %}
+<div class="signup-form">
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="links a">Log In</button>
+        <p>Don't have an account? <a href="{% url 'seller_signup' %}">SignUp</a></p>
+        <div class="social-buttons">
+            <button class="social-button">
+                <img src="{% static 'images/google.png'%}" alt="Google Icon" class="social-icon">
+                Log in with Google
+            </button>
+            <button class="social-button facebook">
+                <img src="{% static 'images/Facebook-PNG-Image.png'%}" alt="Facebook Icon" class="social-icon">
+                Log in with Facebook
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock form %}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Login</title>
+</head>
+<body>
+    <h1>Buyer Login</h1>
+    <form method="post">
+        
+        <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="{% url 'buyer_signup' %}">Sign up here</a>.</p>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,4 +57,4 @@
     </form>
     <p>New user? <a href="{% url 'seller_signup' %}">Sign up here</a>.</p>
 </body>
-</html>
+</html> -->

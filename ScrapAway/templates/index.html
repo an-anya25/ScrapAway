@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block title %}
+ALOHA
+{% endblock title %}
+{% block form %}
+<body>
+    <img src="../static/images/collector.png" alt="Buyer Image" width="150" height="150" style="margin-left: 10px;">    
+    <div>
+        <h1 style="text-align: center; margin-bottom: 700px; margin-left: 200px;">ALOHA</h1>
+    </div>
+    
+    <div style="margin-right: 300px;">
+        <h2 class="signup-form label">Are you a buyer or a seller?</h2>
+        <button class="social-button links a" style="margin-top: 10px; margin-left: 10px; ">
+            <a href="{% url 'buyer_login' %}" >Buyer Login</a>
+        </button>
+        <button class="social-button links a" style="margin-top: 10px; margin-left: 10px; ">
+            <a href="{% url 'seller_login' %}" >Seller Login</a>
+        </button>
+    </div>
+    <img src="../static/images/seller.png" alt="Seller Image" width="150" height="150">
+</body>
+{% endblock form %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,8 +30,16 @@
     <title>Landing Page</title>
 </head>
 <body>
-    <h1>Welcome to our website!</h1>
+    <h1>ALOHA</h1>
     <h2>Are you a buyer or a seller?</h2>
-    <a href="{% url 'buyer_login' %}">Buyer Login</a> | <a href="{% url 'seller_login' %}">Seller Login</a>
+    <p>
+        <button>
+            <a href="{% url 'buyer_login' %}">Buyer Login</a>
+        </button>
+        <button>
+            <a href="{% url 'seller_login' %}">Seller Login</a>
+        </button>
+    </p>
+    
 </body>
-</html>
+</html> -->
