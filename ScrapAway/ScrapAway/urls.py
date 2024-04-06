@@ -32,6 +32,13 @@ urlpatterns = [
     path('buyer/signup/', views.buyer_signup, name='buyer_signup'),  
     path('seller/signup/', views.seller_signup, name='seller_signup'),  
     path('buyer/dashboard/', views.buyer_dashboard, name='buyer_dashboard'),
+    path('pickup/<int:id>', views.request_details, name='pickup_details'),
+    path('pickup/<int:id>/accept', views.accept_request, name='accept_request'),
+    path('seller/dashboard/', views.seller_dashboard, name='seller_dashboard'),  
+    # path('seller/sellerstatus/', views.seller_status, name='sell_status'),  
+
+
+
 ]\
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

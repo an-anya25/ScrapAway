@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request details</title>
+</head>
+<body>
+            <div>
+                <p><b>seller:</b> {{pickup_request.seller}}</p>
+                <p><b>item:</b> {{pickup_request.item}}</p>
+                <p><b>item_desc:</b> {{pickup_request.item_desc}}</p>
+                <p><b>status:</b> {{pickup_request.status}}</p>
+            </div>
+            <div>
+                <a href="{% url 'accept_request' pickup_request.id %}" ><button>Accept</button></a>
+            </div>
+</body>
+</html></h5>

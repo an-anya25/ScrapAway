@@ -1,29 +1,37 @@
-<!-- buyer_dashboard.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buyer Dashboard</title>
+    <title>Sell item</title>
 </head>
 <body>
-    <h1>Welcome to Buyer Dashboard</h1>
-    <!-- Your dashboard content goes here -->
+    <h1>Sell item</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+
 
     <ol>
-        {% for c in requests  %}
+        {% for c in pickup_requests  %}
         <li>
             <div>
                 <p><b>seller:</b> {{c.seller}}</p>
                 <p><b>item:</b> {{c.item}}</p>
+                <p><b>item desc:</b> {{c.item_desc}}</p>
+                <p><b>status:</b> {{c.status}}</p>
+
+
+                
             </div>
-            <div>
+            {% comment %} <div>
                 <a href="{% url 'pickup_details' c.id %}" ><button>More details</button></a>
-            </div>
+            </div> {% endcomment %}
         </li>
     {% endfor %}
     </ol>
-
 </body>
 </html>
