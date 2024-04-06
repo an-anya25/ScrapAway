@@ -1,8 +1,13 @@
-<!-- buyer_dashboard.html -->
-
+{% extends 'auth_base.html' %}
+{% load static %}
+{% block title %}
+Buyer Dashboard
+{% endblock title %}
+{% block form %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyer Dashboard</title>
@@ -25,5 +30,9 @@
     {% endfor %}
     </ol>
 
+    <a href="{% url 'landing' %}" ><button>Log out</button></a>
+
+
 </body>
 </html>
+{% endblock form %}

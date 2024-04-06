@@ -27,6 +27,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.landing, name='landing'),
+    path('/signup', views.signup, name='signup'),
+    path('/about', views.about, name='about'),
     path('buyer/login/', views.buyer_login, name='buyer_login'),
     path('seller/login/', views.seller_login, name='seller_login'),
     path('buyer/signup/', views.buyer_signup, name='buyer_signup'),  
@@ -35,7 +37,8 @@ urlpatterns = [
     path('pickup/<int:id>', views.request_details, name='pickup_details'),
     path('pickup/<int:id>/accept', views.accept_request, name='accept_request'),
     path('seller/dashboard/', views.seller_dashboard, name='seller_dashboard'),  
-    # path('seller/sellerstatus/', views.seller_status, name='sell_status'),  
+
+    #path('seller/sellerstatus/', views.seller_status, name='sell_status'),  
 
 
 

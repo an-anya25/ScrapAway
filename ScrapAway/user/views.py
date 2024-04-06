@@ -8,12 +8,14 @@ from django.shortcuts import get_object_or_404
 def landing(request):
     # Your view logic here
     return render(request, 'index.html')  # Assuming 'landing.html' is your landing page template
-
-
+def signup(request):
+    return render(request, 'signup.html')
+def about(request):
+    return render(request,'about.html')
 def buyer_signup(request):
     if request.method == 'POST':
         form = BuyerSignUpForm(request.POST)
-        if form.is_valid():
+        if form.is_valid(): 
             user = form.save(commit=False)
             user.is_buyer = True
             user.save()
